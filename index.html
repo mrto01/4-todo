@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="nav">
+                <div class="logo">
+                    <img src="/asset/pic/Logo_round_black.svg" alt="logo">
+                    <span>4S Todo</span>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/"><span class="material-symbols-outlined">home</span>Home</a></li>
+                    <li class="nav-item"><a href="#"><span class="material-symbols-outlined">
+                        insert_chart
+                        </span>Report</a></li>
+                    <li class="nav-item"><a href="#"><span class="material-symbols-outlined">
+                        logout
+                        </span>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="action">
+                <button><span class="material-symbols-outlined">add_box</span>Add Task</button>
+                    <div class="overlay">
+                        <form action="#" class="task-form">
+                            <h3>Add Task<span class="material-symbols-outlined">
+                                close
+                                </span></h3>
+                            <div class="input-block">
+                                <label for="task-name">Task Name</label>
+                                <input type="text" name="taskName" id="task-name">
+                            </div>
+                            <ul class="selection">
+                                <li class="title">
+                                    <input type="radio" name="choice" >
+                                </li>
+                            </ul>
+                            <div class="input-block">
+                                <label for="notes">Notes</label>
+                                <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="task-action">
+                                <button id="accept" style="background-color: #F29D1E;">
+                                    Accept
+                                </button>
+                                <button id="cancel">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+            <main class="card-list">
+                <div class="column">
+                    <section class="card-item first">
+                        <div class="heading">
+                            <span class="material-symbols-outlined">
+                                notification_important
+                                </span>
+                            <h2>Urgent and important</h2>
+                        </div>
+                        <div class="score">
+                            <span class="completed">0</span>
+                            /
+                            <span class="uncompleted">0</span>
+                        </div>
+                        <button><span class="material-symbols-outlined">
+                            folder_open
+                            </span>Open</button>
+                    </section>
+                </div>
+                <div class="column">
+                    <section class="card-item second">
+                        <div class="heading">
+                            <span class="material-symbols-outlined">
+                                star
+                                </span>
+                            <h2>Important not urgent</h2>
+                        </div>
+                        <div class="score">
+                            <span class="completed">0</span>
+                            /
+                            <span class="uncompleted">0</span>
+                        </div>
+                        <button><span class="material-symbols-outlined">
+                            folder_open
+                            </span>Open</button>
+                    </section>
+                </div>
+                <div class="column">
+                    <section class="card-item third">
+                        <div class="heading">
+                            <span class="material-symbols-outlined" style="transform: translate(30px,-10px);">
+                                thumb_up
+                                </span>
+                            <h2>Not urgent and not important</h2>
+                        </div>
+                        <div class="score">
+                            <span class="completed">0</span>
+                            /
+                            <span class="uncompleted">0</span>
+                        </div>
+                        <button><span class="material-symbols-outlined">
+                            folder_open
+                            </span>Open</button>
+                    </section>
+                </div>
+               <div class="column">
+                <section class="card-item fourth">
+                    <div class="heading">
+                        <span class="material-symbols-outlined">
+                            error
+                            </span>
+                        <h2>Urgent and important</h2>
+                    </div>
+                    <div class="score">
+                        <span class="completed">0</span>
+                        /
+                        <span class="uncompleted">0</span>
+                    </div>
+                    <button><span class="material-symbols-outlined">
+                        folder_open
+                        </span>Open</button>
+                </section>
+               </div>
+            </main>
+            <div class="footer">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
