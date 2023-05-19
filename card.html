@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="card.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="nav">
+                <div class="logo">
+                    <img src="/asset/pic/Logo_round_black.svg" alt="logo">
+                    <span>4S Todo</span>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/"><span class="material-symbols-outlined">home</span>Home</a></li>
+                    <li class="nav-item"><a href="#"><span class="material-symbols-outlined">
+                        insert_chart
+                        </span>Report</a></li>
+                    <li class="nav-item"><a href="#"><span class="material-symbols-outlined">
+                        logout
+                        </span>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="nav">
+                <a href="index.html" class="return-btn">
+                    <span class="material-symbols-outlined" >
+                        arrow_back
+                        </span>
+                </a>
+                <span class="return-text">
+                    Urgent and important
+                </span>
+                <input type="text" name="search" placeholder="Search...">
+                <div class="status">
+                    <span class="material-symbols-outlined">
+                        check_circle
+                        </span>
+                        completed:
+                        <span class="completed-count">
+                            0
+                        </span>
+                </div>
+            </div>
+                <div class="task-list">
+                    <div class="task-item color-red">
+                        <label class="container">
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                          </label>
+                        <div class="content">
+                            <h2>Task name: Name of task</h2>
+                            <p><strong>Tag name :</strong> Work</p>
+                            <div class="footer">
+                                <span class="date"><strong>Date:</strong> 19/05/2023</span>
+                                <span class="sub-task">
+                                    <strong>Subtask:</strong> 0
+                                </span>
+                            </div>
+                            
+                        </div>
+                        <span class="material-symbols-outlined more-action">more_vert</span>
+                        <ul class="action">
+                            <li><span class="material-symbols-outlined">visibility</span>View subtask</li>
+                            <li><span class="material-symbols-outlined">
+                                edit
+                                </span>Edit</li>
+                            <li><span class="material-symbols-outlined">
+                                delete
+                                </span>Delete</li>
+                        </ul>
+                        <span class="material-symbols-outlined more-down">
+                            expand_more
+                            </span>
+                        <div class="desc" contenteditable="true">
+                            description
+                        </div>
+                    </div>
+                    <div class="task-item color-red">
+                        <label class="container">
+                            <input type="checkbox" >
+                            <span class="checkmark"></span>
+                          </label>
+                        <div class="content">
+                            <h2>Task name: Name of task</h2>
+                            <p><strong>Tag name :</strong> Work</p>
+                            <div class="footer">
+                                <span class="date"><strong>Date:</strong> 19/05/2023</span>
+                                <span class="sub-task">
+                                    <strong>Subtask:</strong> 0
+                                </span>
+                            </div>
+                            
+                        </div>
+                        <span class="material-symbols-outlined more-action">more_vert</span>
+                        <ul class="action">
+                            <li><span class="material-symbols-outlined">visibility</span>View subtask</li>
+                            <li><span class="material-symbols-outlined">
+                                edit
+                                </span>Edit</li>
+                            <li><span class="material-symbols-outlined">
+                                delete
+                                </span>Delete</li>
+                        </ul>
+                        <span class="material-symbols-outlined more-down">
+                            expand_more
+                            </span>
+                        <div class="desc" contenteditable="true">
+                            description
+                        </div>
+                    </div>
+                </div>
+            <div class="footer">
+
+            </div>
+        </div>
+    </div>
+    <script>
+       let moreBtns = Array.from(document.getElementsByClassName('more-down'));
+       moreBtns.forEach(moreBtn =>{
+        moreBtn.onclick = ()=>{
+            moreBtn.nextElementSibling.classList.toggle('open');
+        }
+       })
+       let moreAction = Array.from(document.getElementsByClassName('more-action'));
+       moreAction.forEach(action =>{
+        action.onclick = ()=>{
+            var actionBox = action.nextElementSibling;
+            actionBox.classList.toggle('open');
+            actionItems = Array.from(actionBox.children);
+            actionItems.forEach(actionItem=>{
+                actionItem.onclick = ()=>{
+                    actionBox.classList.toggle('open');
+                }
+            })
+        }
+       })
+       
+    </script>
+</body>
+</html>
