@@ -65,7 +65,7 @@ body{
     display: flex;
     width:100%;
     align-items: flex-end;
-    padding:25px 50px 0;
+    padding:20px 50px 0;
     position:relative;
 }
 
@@ -318,8 +318,7 @@ body{
 }
 
 #options li:hover{
-    background-image:linear-gradient(to bottom,#3c33e4,#4141e0,#00D4FF);
-    opacity: 0.5;
+    background-image:linear-gradient(173.53deg, rgba(33, 25, 182, 0.78) 3.63%, rgba(47, 47, 179, 0.64) 47.01%, rgba(0, 212, 255, 0.65) 95.15%);
     text-transform: capitalize;
 }
 
