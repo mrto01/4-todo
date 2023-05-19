@@ -144,7 +144,7 @@ body{
     font-size:46px;
 }
 
-.card-item.first{
+.card-item.first, .option-item>.first{
     color:#F24E1E;
 
 }
@@ -152,7 +152,7 @@ body{
     background-color: #F24E1E;
 }
 
-.card-item.second{
+.card-item.second,.option-item>.second{
     color:#78D458;
 
 }
@@ -160,7 +160,7 @@ body{
     background-color: #78D458;
 }
 
-.card-item.third{
+.card-item.third,.option-item>.third{
     color:#40ACE9;
 
 }
@@ -168,7 +168,7 @@ body{
     background-color: #40ACE9;
 }
 
-.card-item.fourth{
+.card-item.fourth,.option-item>.fourth{
     color:#F29D1E;
 
 }
@@ -191,7 +191,7 @@ body{
     opacity:0.8;
 }
 
-.action .overlay{
+#overlay{
     width: 100%;
     height:100%;
     position: fixed;
@@ -202,6 +202,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    display:none;
 }
 
 .task-form{
@@ -229,11 +230,15 @@ body{
     font-weight: 600;
 }
 
-.input-block>input, .input-block>select,.input-block>textarea{
+.input-block>input, .input-block>textarea{
+    font-size: 16px;
     margin-top:5px;
     padding:8px;
     border-radius: 10px;
     outline: none;
+    border:none;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    border-bottom: 1px solid black;
 }
 
 .task-action{
@@ -248,4 +253,78 @@ body{
     border-radius: 10px;
     border:none;
     font-weight: 500;
+}
+
+.select_expand{
+    padding:8px;
+}
+
+.selection{
+    position: relative;
+}
+.selection::after{
+    content: "";
+    padding: 3px;
+    border:2px solid black;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    right:10px;
+    top:60%;
+    transform:rotate(-45deg);
+    transition:transform 0.5s ease;
+}
+
+.selection.active::after{
+    transform: rotate(135deg);
+}
+
+#options{
+    list-style-type: none;
+    position:absolute;
+    background: white;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    width:100%;
+    border-radius: 10px;
+    top:110%;
+    left: 0;
+    display:none;
+    overflow: hidden;
+    animation:fade-in 0.5s;
+    z-index: 2;
+}
+
+.selection.active #options{
+    display:block;
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#options .option-item{
+    padding:5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#options li:hover{
+    background-image:linear-gradient(to bottom,#3c33e4,#4141e0,#00D4FF);
+    opacity: 0.5;
+    text-transform: capitalize;
+}
+
+.option-item>span{
+    margin-right:5px;
+}
+
+#cancel:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }

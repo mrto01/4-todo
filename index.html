@@ -30,21 +30,54 @@
         </div>
         <div class="right">
             <div class="action">
-                <button><span class="material-symbols-outlined">add_box</span>Add Task</button>
-                    <div class="overlay">
+                <button onclick="openOverlay()"><span class="material-symbols-outlined">add_box</span>Add Task</button>
+                    <div id="overlay">
                         <form action="#" class="task-form">
-                            <h3>Add Task<span class="material-symbols-outlined">
+                            <h3>Add Task<span class="material-symbols-outlined" onclick="closeOverlay()">
                                 close
-                                </span></h3>
+                                </span ></h3>
                             <div class="input-block">
                                 <label for="task-name">Task Name</label>
                                 <input type="text" name="taskName" id="task-name">
                             </div>
-                            <ul class="selection">
-                                <li class="title">
-                                    <input type="radio" name="choice" >
-                                </li>
-                            </ul>
+                            <div class="input-block selection">
+                                <label for="task-tag">Tag</label>
+                                <input style="cursor:pointer" type="text" name="saveto" id="task-tag" placeholder="Select an option" readonly>
+                                <ul id="options">
+                                    <li class="option-item" onclick="show('Life')">Life</li>
+                                    <li class="option-item" onclick="show('Work')">Work</li>
+                                    <li class="option-item" onclick="show('Business')">Business</li>
+                                    <li class="option-item" onclick="show('Sport')">Sport</li>
+                                </ul>
+                            </div>
+                            <div class="input-block selection">
+                                <label for="save-to">Save-to</label>
+                                <input style="cursor:pointer" type="text" name="saveto" id="save-to" placeholder="Select an option" readonly>
+                                <ul id="options">
+                                    <li class="option-item" onclick="show2('Urgent and important')">
+                                        <span class="material-symbols-outlined first">
+                                            notification_important
+                                            </span> Urgent and important</li>
+                                    <li  class="option-item"  onclick="show2('Important not urgent')">
+                                        <span class="material-symbols-outlined second">
+                                            star
+                                            </span>
+                                             Important not urgent
+                                    </li>
+                                    <li class="option-item"  onclick="show2('Not urgent and not important')">
+                                        <span class="material-symbols-outlined third">
+                                            sentiment_neutral
+                                            </span>
+                                             Not urgent and not important
+                                    </li>
+                                    <li class="option-item" onclick="show2('Urgent and not important')">
+                                        <span class="material-symbols-outlined fourth">
+                                            error
+                                            </span>
+                                             Urgent and not important
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="input-block">
                                 <label for="notes">Notes</label>
                                 <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
@@ -52,8 +85,8 @@
                             <div class="task-action">
                                 <button id="accept" style="background-color: #F29D1E;">
                                     Accept
-                                </button>
-                                <button id="cancel">
+                                </b utton>
+                                <button id="cancel" onclick="closeOverlay()">
                                     Cancel
                                 </button>
                             </div>
@@ -100,8 +133,8 @@
                 <div class="column">
                     <section class="card-item third">
                         <div class="heading">
-                            <span class="material-symbols-outlined" style="transform: translate(30px,-10px);">
-                                thumb_up
+                            <span class="material-symbols-outlined">
+                                sentiment_neutral
                                 </span>
                             <h2>Not urgent and not important</h2>
                         </div>
@@ -121,7 +154,7 @@
                         <span class="material-symbols-outlined">
                             error
                             </span>
-                        <h2>Urgent and important</h2>
+                        <h2>Urgent and not important</h2>
                     </div>
                     <div class="score">
                         <span class="completed">0</span>
@@ -139,5 +172,28 @@
             </div>
         </div>
     </div>
+    <script>
+        let input = document.getElementById('task-tag');
+        let input2 = document.getElementById('save-to');
+        let selection = document.getElementsByClassName('selection');
+        function show(text){
+            input.value = text;
+        }
+        function show2(text){
+            input2.value = text;
+        }
+        Array.from(selection).forEach(element=>{
+            element.onclick = function(){
+                element.classList.toggle('active');
+            }
+        })
+
+        function closeOverlay(){
+            document.getElementById('overlay').style.display="none";
+        }
+        function openOverlay(){
+            document.getElementById('overlay').style.display="flex";
+        }
+    </script>
 </body>
 </html>
